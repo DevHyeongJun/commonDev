@@ -1,0 +1,51 @@
+div, html, body, button, table, th, tr, td, ul, li {
+    padding:0;
+    margin:0;
+}
+
+html, body {
+    height:100%;
+    width:100%;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+.wrap {
+    height:100%;
+    width:100%;
+    flex-direction: column;
+}
+
+.wrap > div {
+    flex: 1;
+}
+.top {
+    height: 60px;
+    background: beige;
+    padding: 10px;
+}
+
+.middle {
+    display: flex;
+}
+
+.middle > div {
+    background:red;
+    height:100%; 
+    flex:1
+}
+
+.header {
+    height:100%;
+    line-height:55px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.header > div {
+    background:none;
+    border:none;
+}

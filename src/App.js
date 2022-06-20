@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+//메인 화면 구성
+
+import Main from "./domain/main/main.jsx";
+
+import "./css/global.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrap">
+      <Main></Main>
     </div>
   );
 }
