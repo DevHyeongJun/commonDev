@@ -11,9 +11,9 @@ const Request = (url, _callBack) => {
 }
 export const RequestAPI = {
 
-    getLayerList : () => {
+    getLayerList : (param, callBack) => {
         Request("http://localhost:5050/layer/list", (res) => {
-            console.log(res);
+            callBack(res.data);
         });
     }
 }

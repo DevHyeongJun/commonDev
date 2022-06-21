@@ -6,12 +6,11 @@ export default class ListView extends Component {
 
     constructor(props) {
         super(props);
+        this.defaultProps = {
+            list : [] //리스트 표출용 내부 알아서~ 
+        }
     }
     
-    defaultProps = {
-        list : [] //리스트 표출용 내부 알아서~ 
-    }
-
     componentDidMount() {
 
     }

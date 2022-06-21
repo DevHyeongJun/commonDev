@@ -29,11 +29,11 @@ button {
 }
 
 .middle {
-    display: flex;
+    margin:0 auto;
+    width:800px;
 }
 
 .middle > div {
-    background:red;
     height:100%; 
     flex:1
 }
