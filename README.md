@@ -2,12 +2,11 @@
 
 ## 환경 설정
 >  1. node 설치
->  2. 리액트 섫치   
->    ```npm install -g create-react-app```
-
-## 구동 방법
-> ```npm install```  
-> ```npm start```  
+>  ```git init```
+>  ```git remote add origin https://github.com/DevHyeongJun/commonDev.git```
+>  ```git pull origin```
+>  ```npm install```
+>  ```npm start```  
 > 
 
 ## 실행 스크립트
