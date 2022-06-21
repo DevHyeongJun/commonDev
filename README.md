@@ -7,7 +7,7 @@
 >  
 >  ```git remote add origin https://github.com/DevHyeongJun/commonDev.git```
 >  
->  ```git pull origin```
+>  ```git pull origin main```
 >  
 >  ```npm install```
 >  
