@@ -3,15 +3,19 @@
 ## 환경 설정
 >  1. node 설치
 >  
->  ```git init```
+>  ```
 >  
->  ```git remote add origin https://github.com/DevHyeongJun/commonDev.git```
+>  git init
 >  
->  ```git pull origin main```
+>  git remote add origin https://github.com/DevHyeongJun/commonDev.git
 >  
->  ```npm install```
+>  git pull origin main
 >  
->  ```npm start```  
+>  npm install
+>  
+>  npm start
+>  
+>  ```  
 > 
 
 ## 실행 스크립트
