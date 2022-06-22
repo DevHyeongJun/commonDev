@@ -1,10 +1,10 @@
 import React,{ Component } from 'react';
 
-import HeaderComponent from "../../component/layout/header/HeaderComponent.jsx";
-import ListView from "../../component/common/list/ListView.jsx";
-import {RequestAPI} from "../../api/requsetApI.js";
+import HeaderComponent from "../component/layout/header/HeaderComponent.jsx";
+import ListView from "../component/common/list/ListView.jsx";
+import {RequestAPI} from "../api/requsetApI.js";
 
-export default class Main extends Component {
+export default class LayerRoute extends Component {
 
     constructor(props) {
         super(props);
@@ -115,52 +115,47 @@ export default class Main extends Component {
     render() {
         const {dburl, dbid, dbpw, isDbconn, list } = this.state;
         return (
-            <div>
-                <div className="top">
-                    <HeaderComponent />
-                </div>
-                <div className="middle">
-                    <div className="dbconn">
-                        <span>
-                            <label>URL</label>
-                            <input type="text" onChange={(e)=> {  this.setState({dburl: e.target.value })}} placeholder='127.0.0.1:5432/xeus_db' value={dburl}/>
-                        </span>
-                        <span>
-                            <label>id</label>
-                            <input type="text" onChange={(e)=> {  this.setState({dbid: e.target.value })}} placeholder='postgres' value={dbid}/>
-                        </span>
-                        <span>
-                            <label>passward</label>
-                            <input type="text" onChange={(e)=> {  this.setState({dbpw: e.target.value })}} placeholder='postgres' value={dbpw}/>
-                        </span>
-                        <button onClick={this.handlerDbconn}> 연결 </button>
-                        <div>
-                            <p>DB 정보 : {`${dburl} ${dbid} ${dbpw}`}</p>
-                            {
-                                (isDbconn ?
-                                <><button onClick={this.handlerGetList}>목록 조회</button></>
-                                :
-                                <></>)
-                            }
-                    
-                        </div>
-                    </div>
-                    {
-                        (isDbconn && list.length > 0 ? 
-                            <ListView width="800px" list={this.state.list}/>
+            <>
+                <div className="dbconn">
+                    <span>
+                        <label>URL</label>
+                        <input type="text" onChange={(e)=> {  this.setState({dburl: e.target.value })}} placeholder='127.0.0.1:5432/xeus_db' value={dburl}/>
+                    </span>
+                    <span>
+                        <label>id</label>
+                        <input type="text" onChange={(e)=> {  this.setState({dbid: e.target.value })}} placeholder='postgres' value={dbid}/>
+                    </span>
+                    <span>
+                        <label>passward</label>
+                        <input type="text" onChange={(e)=> {  this.setState({dbpw: e.target.value })}} placeholder='postgres' value={dbpw}/>
+                    </span>
+                    <button onClick={this.handlerDbconn}> 연결 </button>
+                    <div>
+                        <p>DB 정보 : {`${dburl} ${dbid} ${dbpw}`}</p>
+                        {
+                            (isDbconn ?
+                            <><button onClick={this.handlerGetList}>목록 조회</button></>
                             :
-                            ( isDbconn ? 
-                                <></>
-                                :
-                                <div className="empty">
-                                    DB 연결을 해주셔야 합니다.
-                                </div>
-                            )
-                         
-                        )
-                    }
+                            <></>)
+                        }
+                
+                    </div>
                 </div>
-            </div>
+                {
+                    (isDbconn && list.length > 0 ? 
+                        <ListView width="800px" list={this.state.list}/>
+                        :
+                        ( isDbconn ? 
+                            <></>
+                            :
+                            <div className="empty">
+                                DB 연결을 해주셔야 합니다.
+                            </div>
+                        )
+                        
+                    )
+                }
+            </> 
         )
     }
 }

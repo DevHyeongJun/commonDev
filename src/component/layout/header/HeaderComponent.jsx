@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 /**
- * 리스트뷰 아이템 컴포넌트
+ *  ROUTE 를 사용해야함.
  */
  export default class HeaderComponent extends Component {
 
@@ -12,7 +12,11 @@ import React, { Component } from 'react';
     gnbMenu = [
         {
             name : "레이어 등록",
-            page : ""
+            path : 'layer'
+        },
+        {
+            name : "GIS REST 요청",
+            path : 'gisrest'
         }
     ];
     
