@@ -1,0 +1,27 @@
+@import 'const';
+
+div, html, body, button, table, th, tr, td, ul, li {
+    padding:0;
+    margin:0;
+}
+
+html, body {
+    height:100%;
+    width:100%;
+}
+
+.hj_btn {
+    background: none;
+    border: 1px solid $global-color;
+    border: 1px solid $global-color;
+    padding: 6px;
+    border-radius: 5px;
+    margin: 0 5px;
+    min-width: 60px;
+    color:  $global-color;
+}
+
+.hj_btn:hover {
+    background:  $global-color;
+    color: #fff;
+}

@@ -2,7 +2,9 @@
 
 import Main from "./domain/main.jsx";
 
-import "./css/global.css";
+import "./css/global.scss";
+import "./css/layout.scss";
+import "./css/component.scss";
 
 function App() {
   return (

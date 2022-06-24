@@ -1,0 +1,57 @@
+@import 'const';
+
+.wrap {
+    height:100%;
+    width:100%;
+    flex-direction: column;
+    > div {
+        flex: 1;
+    }
+}
+
+.top {
+    height: 60px;
+    .header {
+        height:100%;
+        line-height:55px;
+        font-size: 15px;
+        font-weight: bold;
+        
+        > div {
+            background:none;
+            border:none;
+            button {
+                height:100%;
+                background:#fff;
+                border: 1px solid  $global-color;
+                padding: 0 5px;
+            }
+        }
+    }
+}
+
+.middle {
+    margin:0 auto;
+    width:100%;
+    text-align: center;
+    .dbconn {
+        background: #eee;
+        padding: 20px;
+
+        span {
+            padding-right: 7px;
+
+            label {
+                padding-right: 7px;
+            }
+        }
+    }
+
+    .empty {
+        margin: 0 auto;
+        width:300px;
+        height:100px;
+        line-height: 100px;   
+        color:#666;
+    }
+}

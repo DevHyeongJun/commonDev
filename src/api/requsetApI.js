@@ -24,6 +24,12 @@ export const RequestAPI = {
         });
     },
 
+    removeLayer : (param, callBack) => {
+        Request("http://localhost:5050/layer/remove", { param, method:'post'}, (res) => {
+            callBack(res.data);
+        });
+    },
+
     getLayerList : (param, callBack) => {
         Request("http://localhost:5050/layer/list", { param, method:'get'}, (res) => {
             callBack(res.data);

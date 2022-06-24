@@ -2,6 +2,7 @@ import React,{ Component } from 'react';
 
 import HeaderComponent from "../component/layout/header/HeaderComponent.jsx";
 import ListView from "../component/common/list/ListView.jsx";
+import {HjButton} from "../component/common/HjComponent.js";
 import {RequestAPI} from "../api/requsetApI.js";
 
 export default class LayerRoute extends Component {
@@ -24,24 +25,27 @@ export default class LayerRoute extends Component {
         let lyrNmValue = lyrnm;
         return (
             <div style={{display:'flex', height:'40px', lineHeight:'40px'}}>
-                <div style={{flex:1}}><input type="checkbox" /></div>
-                <div style={{flex:3}}><span>{tblnm}</span></div>
-                <div style={{flex:4}}>
+               
+                <div style={{width:'200px'}}><span>{tblnm}</span></div>
+                <div>
                     <input type="text" id={`lyr_add_${mgrseq}`} name={mgrseq} defaultValue={lyrNmValue} style={{width:'90%'}}/>
+                </div>
+                <div>
                     {
                         (ischk ?
-                            <button onClick={this.handleLayerMod.bind(this, obj)}>수정</button>
+                            <>
+                                <HjButton onClick={this.handleLayerMod.bind(this, obj)}>수정</HjButton>
+                                <HjButton onClick={this.handleLayerRemove.bind(this, obj)}>삭제</HjButton>
+                            </>
                             :
-                            <button onClick={this.handleLayerAdd.bind(this, obj)}>저장</button>
+                            <HjButton onClick={this.handleLayerAdd.bind(this, obj)}>저장</HjButton>
                         )
                     }
-                   
                 </div>
             </div>
         )
     }
 
-    
     initLayerList = () => {
         
         RequestAPI.getLayerList({}, (res)=>{
@@ -59,6 +63,22 @@ export default class LayerRoute extends Component {
             }
 
             this.setState({list});
+
+        });
+    }
+
+    handleLayerRemove = (obj, e) => {
+
+        RequestAPI.removeLayer(obj, (res)=>{
+            const { resultCode, result } = res;
+            
+            if ( resultCode === 0 ) {
+                alert('삭제 되었습니다.');
+            } else {
+                console.log('error');
+            }
+
+            this.initLayerList();
 
         });
     }
@@ -129,12 +149,12 @@ export default class LayerRoute extends Component {
                         <label>passward</label>
                         <input type="text" onChange={(e)=> {  this.setState({dbpw: e.target.value })}} placeholder='postgres' value={dbpw}/>
                     </span>
-                    <button onClick={this.handlerDbconn}> 연결 </button>
+                    <HjButton onClick={this.handlerDbconn}> 연결 </HjButton>
                     <div>
                         <p>DB 정보 : {`${dburl} ${dbid} ${dbpw}`}</p>
                         {
                             (isDbconn ?
-                            <><button onClick={this.handlerGetList}>목록 조회</button></>
+                            <><HjButton onClick={this.handlerGetList}>목록 조회</HjButton></>
                             :
                             <></>)
                         }
