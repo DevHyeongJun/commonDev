@@ -24,6 +24,7 @@ export default class LayerRoute extends Component {
         const {ischk, lyrnm, srid, tblnm, tblschema, type, mgrseq } = obj;
         let lyrNmValue = lyrnm;
         return (
+            
             <div style={{display:'flex', height:'40px', lineHeight:'40px'}}>
                
                 <div style={{width:'200px'}}><span>{tblnm}</span></div>
@@ -168,9 +169,12 @@ export default class LayerRoute extends Component {
                         ( isDbconn ? 
                             <></>
                             :
-                            <div className="empty">
-                                DB 연결을 해주셔야 합니다.
+                            <div>
+                                
                             </div>
+                            // <div className="empty">
+                            //     DB 연결을 해주셔야 합니다.
+                            // </div>
                         )
                         
                     )

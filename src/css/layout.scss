@@ -1,6 +1,7 @@
 @import 'const';
 
 .wrap {
+    color:$global-base-color;
     height:100%;
     width:100%;
     flex-direction: column;
@@ -16,15 +17,32 @@
         line-height:55px;
         font-size: 15px;
         font-weight: bold;
+        justify-content: baseline;
+        padding-right : 40px;
+        display: flex;
+
+        span {
+            flex:1;
+        }
         
-        > div {
+        .gnb_tit {
+            padding-left: 40px;
+            font-size: 24px;
+        }
+        button {
+            margin-left:30px;
             background:none;
             border:none;
-            button {
-                height:100%;
-                background:#fff;
-                border: 1px solid  $global-color;
-                padding: 0 5px;
+            color:#bbb;
+            cursor:pointer;
+            height:100%;
+            font-weight: bold;
+            background:#fff;
+            font-size:20px;
+            padding: 0 5px;
+
+            &.active {
+                color: $global-base-color
             }
         }
     }
@@ -34,8 +52,27 @@
     margin:0 auto;
     width:100%;
     text-align: center;
+    display:flex;
+
+    > div {
+        &.side {
+            width:200px;
+        }
+
+        &.main {
+            flex:5;
+
+            h1 {          
+                font-size: 28px;
+                line-height: 110px;
+            }
+            
+        }
+
+    }
+
     .dbconn {
-        background: #eee;
+
         padding: 20px;
 
         span {
@@ -52,6 +89,6 @@
         width:300px;
         height:100px;
         line-height: 100px;   
-        color:#666;
+        color:$global-base-color;
     }
 }

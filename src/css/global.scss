@@ -8,8 +8,18 @@ div, html, body, button, table, th, tr, td, ul, li {
 html, body {
     height:100%;
     width:100%;
+    font-size:20px
 }
 
+input {
+    border-radius: 6px;
+    padding: 10px;
+    /* border: none; */
+    border : 1px solid $global-base-color;
+    height: 25px;
+    /* border-bottom: 1px solid #000; */
+    font-size: 18px;
+}
 .hj_btn {
     background: none;
     border: 1px solid $global-color;
@@ -19,9 +29,45 @@ html, body {
     margin: 0 5px;
     min-width: 60px;
     color:  $global-color;
+    font-size: 18px;
+    padding: 10px;
 }
 
 .hj_btn:hover {
     background:  $global-color;
     color: #fff;
+}
+
+.testTable {
+    width:100%;
+    height:100%;
+
+    > table {
+        width:500px;
+        font-size:14px;
+        > thead th {
+            border-bottom:1px solid $global-base-color;
+            padding:0;
+            margin:0;
+            padding-bottom: 15px;
+            color:#777;
+        }
+
+        > tbody td {
+            border-bottom:none;
+            padding:15px;
+            margin:0;
+            padding-bottom: 10px;
+            color:$global-base-color;
+
+            button {
+                border:0;
+                padding:10px;
+                width:80px;
+                border-radius: 10px;
+                color:#fff;
+                background:#51f672;
+            }
+        }
+    }
 }
