@@ -1,30 +1,28 @@
 import React,{ Component } from 'react';
+import { connect } from 'react-redux';
 
 import HeaderComponent from "../component/layout/header/HeaderComponent.jsx";
 import LayerRoute from "./layerRoute.jsx";
 import { pageActions } from "../redux/reducers/pageSlice";
 import { store } from "../redux/store/index"
 
-export default class Main extends Component {
 
-  
+class Main extends Component {
+
     constructor(props) {
         super(props);
-        
-      
+
+        this.gnbMenu = [
+            {
+                name : "프로젝트",
+                path : 'project'
+            },
+            {
+                name : "개발",
+                path : 'develop'
+            }
+        ];
     }
-
-    gnbMenu = [
-        {
-            name : "프로젝트",
-            path : 'project'
-        },
-        {
-            name : "개발",
-            path : 'develop'
-        }
-    ];
-
 
     handlerGnbChange = (path) => {
         store.dispatch(pageActions.setPage(path));
@@ -32,11 +30,12 @@ export default class Main extends Component {
     
     render() {
         
-        const page = store.getState().page;
+        const {userId} = store.getState();
+console.log(store.getState())
         return (
             <div class="wrap">
                 <div className="top">
-                    <HeaderComponent active={page} gnbMenu={this.gnbMenu} onClick={this.handlerGnbChange}/>
+                    <HeaderComponent pageName={userId} gnbMenu={this.gnbMenu} onClick={this.handlerGnbChange}/>
                 </div>
                 <div className="middle">
                     {/* <div className="side">
@@ -51,3 +50,9 @@ export default class Main extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    return { page: state.page }
+}
+
+export default connect(mapStateToProps)(Main);

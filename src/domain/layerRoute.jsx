@@ -1,6 +1,5 @@
 import React,{ Component } from 'react';
 
-import HeaderComponent from "../component/layout/header/HeaderComponent.jsx";
 import ListView from "../component/common/list/ListView.jsx";
 import {HjButton} from "../component/common/HjComponent.js";
 import {RequestAPI} from "../api/requsetApI.js";
@@ -9,7 +8,8 @@ export default class LayerRoute extends Component {
 
     constructor(props) {
         super(props);
-
+        //그래도.. 이건 암호화 처리를 해야할 듯?
+        //TODO: 암호화 모듈 만들기.
         this.state = {
             list : [],
             dburl : '10.1.73.14:5432/xeus-gangwon-hwandonghae-v2',
