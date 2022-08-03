@@ -1,14 +1,14 @@
 //메인 화면 구성
 
-import Main from "./domain/main/main.jsx";
+import Main from "./domain/main.jsx";
 
-import "./css/global.css";
+import "./css/global.scss";
+import "./css/layout.scss";
+import "./css/component.scss";
 
 function App() {
   return (
-    <div className="wrap">
       <Main></Main>
-    </div>
   );
 }
 

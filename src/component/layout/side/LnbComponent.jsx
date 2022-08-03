@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 /**
  *  ROUTE 를 사용해야함.
  */
- export default class HeaderComponent extends Component {
+ export default class LnbComponent extends Component {
 
     constructor(props) {
         super(props);
@@ -11,16 +11,15 @@ import React, { Component } from 'react';
     
     gnbMenu = [
         {
-            name : "프로젝트 Helper",
-            path : 'project'
+            name : "레이어 등록",
+            path : 'layer'
         },
         {
-            name : "개발 Helper",
-            path : 'develop'
+            name : "GIS REST 요청",
+            path : 'gisrest'
         }
     ];
     
-
     componentDidMount() {
 
     }
@@ -37,15 +36,11 @@ import React, { Component } from 'react';
       
         return (
             <div className="header">
-                <span className="gnb_tit">HJ Toy Project</span>
-                <span>
                 {
                     gnbMenu.map((item, i)=>
-                       <button className={i == 0 ? 'active' : ''} style={this.buttonStyle} key={i}>{item.name}</button>
+                       <button style={this.buttonStyle} key={i}>{item.name}</button>
                     )
                 }
-                </span>
-         
             </div>
         )
     }
